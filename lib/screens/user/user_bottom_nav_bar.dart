@@ -38,22 +38,20 @@ class _UserBottomNavBarState extends State<UserBottomNavBar> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Stack(
-              children: [
-                SvgPicture.asset(
-                  "assets/svg/navbar_NumberFourCircle.svg",
-                  height: 24,
-                  width: 24,
-                  colorFilter: ColorFilter.mode(
-                    _currentIndex == 0
-                        ? ProjectColors.mainOrange
-                        : const Color(0xFF292D32),
-                    BlendMode.srcIn,
-                  ),
-                ),
-                Positioned(
-                  child: SvgPicture.asset(
-                    "assets/svg/navbar_NumberFour.svg",
+            icon: Container(
+              width: _currentIndex == 0 ? 44 : null,
+              height: _currentIndex == 0 ? 44 : null,
+              decoration: _currentIndex == 0
+                  ? const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    )
+                  : null,
+              child: Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  SvgPicture.asset(
+                    "assets/svg/navbar_NumberFourCircle.svg",
                     height: 24,
                     width: 24,
                     colorFilter: ColorFilter.mode(
@@ -63,18 +61,78 @@ class _UserBottomNavBarState extends State<UserBottomNavBar> {
                       BlendMode.srcIn,
                     ),
                   ),
-                ),
-              ],
+                  Positioned(
+                    // bottom: 0,
+                    // left: 0,
+                    // right: 0,
+                    child: SvgPicture.asset(
+                      "assets/svg/navbar_NumberFour.svg",
+                      height: 24,
+                      width: 24,
+                      colorFilter: ColorFilter.mode(
+                        _currentIndex == 0
+                            ? ProjectColors.mainOrange
+                            : const Color(0xFF292D32),
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            // label: 'Home',
+            label: 'Home',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            // label: 'Search',
+          BottomNavigationBarItem(
+            icon: Container(
+              width: _currentIndex == 1 ? 44 : null,
+              height: _currentIndex == 1 ? 44 : null,
+              decoration: _currentIndex == 1
+                  ? const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    )
+                  : null,
+              child: Center(
+                child: SvgPicture.asset(
+                  "assets/svg/navbar_emptyWallet.svg",
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    _currentIndex == 1
+                        ? ProjectColors.mainOrange
+                        : const Color(0xFF292D32),
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+            ),
+            label: 'Wallet',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            // label: 'Profile',
+          BottomNavigationBarItem(
+            icon: Container(
+              width: _currentIndex == 2 ? 44 : null,
+              height: _currentIndex == 2 ? 44 : null,
+              decoration: _currentIndex == 2
+                  ? const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    )
+                  : null,
+              child: Center(
+                child: SvgPicture.asset(
+                  "assets/svg/navbar_barcode.svg",
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                    _currentIndex == 2
+                        ? ProjectColors.mainOrange
+                        : const Color(0xFF292D32),
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+            ),
+            label: 'Barcode',
           ),
         ],
       ),

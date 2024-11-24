@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_4you_app/screens/user/auth/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_4you_app/screens/user/auth/signup_screen.dart';
 import 'package:flutter_4you_app/screens/user/user_bottom_nav_bar.dart';
-import 'package:flutter_4you_app/screens/user/user_home_screen.dart';
 import 'package:flutter_4you_app/utils/colors.dart';
 import 'package:flutter_4you_app/utils/extensions.dart';
 import 'package:flutter_4you_app/widgets/custom_text_field.dart';
